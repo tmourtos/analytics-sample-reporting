@@ -26,13 +26,24 @@ Optional parameters:
 * ``--platform`` to apply platform (Desktop, Mobile, Tablet) granularity
 * ``--user`` to apply user (New, Returning) granularity
 
+#### Assumptions
+* A conversion is a session where ``totals.transactions > 0``.
+
 ### User Info
 
 To collect user info details report
-execute the line below in the project directory:
+execute the line below in the project directory. The program outputs
+a CSV file with user info in the project directory:
 ```
 python analytics\analytics-users.py
 ```
+
+#### Assumptions
+* Only users that have converted are included in the export.
+* As conversion time, the ```visitStartTime``` of a 
+conversion session was selected. Therefore, a when a 
+user converts on the first session then ```time_to_convert = 0```.
+
 
 ## References
 Material used in this project:
